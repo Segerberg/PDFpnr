@@ -48,7 +48,7 @@ errorcount = 0
 matches = []
 for root, dirnames, filenames in os.walk(args.p):
     for file in fnmatch.filter(filenames, '*.pdf'):
-        matches.append(os.path.join(root, file.decode('utf-8')))
+        matches.append(os.path.join(root.decode('utf-8'), file.decode('utf-8')))
 for file in matches:        
     count = count + 1
     a = PdfFileReader(open(file, "rb"))
